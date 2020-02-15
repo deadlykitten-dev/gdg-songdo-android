@@ -15,8 +15,8 @@ import retrofit2.http.Query
 interface Api {
     @GET(value = "v1/search/movie.json")
     fun getMovieList(
-        @Header(value = "X-Naver-Client-Id") clientId: String = "",
-        @Header(value = "X-Naver-Client-Secret") clientSecret: String = "",
+        @Header(value = "X-Naver-Client-Id") clientId: String = "1NUXDsk807uWzySiL1F9",
+        @Header(value = "X-Naver-Client-Secret") clientSecret: String = "p7LDHJlZBY",
         @Query(value = "query") query: String
     ): Call<MovieResponse>
 }

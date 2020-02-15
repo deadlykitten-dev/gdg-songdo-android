@@ -18,6 +18,8 @@ class MovieListAdapter : RecyclerView.Adapter<MovieViewHolder>() {
 
     private val items = mutableListOf<Movie>()
 
+    var onClick: (item: Movie) -> Unit = {}
+
     fun replaceItems(items: List<Movie>) {
         this.items.clear()
         this.items.addAll(items)
@@ -36,6 +38,7 @@ class MovieListAdapter : RecyclerView.Adapter<MovieViewHolder>() {
 
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
         val item = items[position]
+        holder.itemView.setOnClickListener { onClick(item) }
         holder.bind(item)
     }
 }
